@@ -43,7 +43,7 @@ class Storage
     {reset($this -> __data);
     }
 }
-    $st = new Storage();
+    /*$st = new Storage();
     $st -> Новость1 = 'Новые санкции';
     $st -> Новость2 = 'В Москве полночь';
     $st -> Новость3 = 'Заканчиваю занятие';
@@ -55,4 +55,4 @@ foreach($st as $key => $value)
 {
     echo $key . "\n";
     echo $value . "<br />";
-}
+}*/
