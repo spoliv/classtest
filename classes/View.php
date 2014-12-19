@@ -1,17 +1,23 @@
 <?php
-require_once __DIR__ . '/Storage.php';
+/*require_once __DIR__ . '/Storage.php';*/
+require_once __DIR__ . '/DB.php';
+
 
 class View
-    extends Storage
+    /*extends Storage*/
+    extends DB
 {
-    public function __construct($fold)
+    /*public $template;
+    public $articles;
+    public function __construct($template)
     {
-        $this -> fold = $fold;
-        return $fold;
+        parent:: __construct($host, $user, $password, $dbname);
+        $this -> template = $template;
+        return $template;
     }
     public function display($template)
     {
         $articles = $this -> articles;
-        include $this -> fold . $template;
-    }
+        include $this -> template;
+    }*/
 }

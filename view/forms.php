@@ -5,7 +5,7 @@
 <body>
 <br />
 <br />
-<form action="classes/storage.php"
+<form
       method="post"
       enctype="multipart/form-data">
     <legend><h3>Добавьте заголовок</h3></legend>
