@@ -6,6 +6,8 @@ class DB
     public $password;
     public $dbname;
     public $table;
+    public $tit;
+    public $txt;
 
     public function __construct($host, $user, $password, $dbname)
     {
@@ -38,5 +40,11 @@ class DB
         }
         return $ret;
     }
+        public function News_getOne()
+        {
+            $resul = mysql_query($this -> table);
+            $rowl = mysql_fetch_assoc($resul);
+            return $rowl;
+        }
 
 }
