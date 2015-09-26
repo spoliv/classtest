@@ -2,10 +2,11 @@
 
 abstract class AController{
 
-    public function action($name){
+    public function action($name, $st)
+    {
         $actionName = 'action' . ucfirst($name);
         if(method_exists($this, $actionName)) {
-            $this->$actionName();
+            $this->$actionName($st);
         }
     }
 }

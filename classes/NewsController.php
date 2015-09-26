@@ -2,34 +2,31 @@
 class NewsController
     extends AController
 {
-    protected function actionAll()
+    protected function actionAll($st)
     {
-        $view = new View('localhost', 'root', '', 'test');
-        $view -> table = "SELECT * FROM news";
-        $articles = $view -> All_news();
-        include 'view/index.php';
+        $view = new View('view/indexv.php');
+        $view->news = $st/*$allnews->All_news()*/;
+        $view->display();
     }
-    protected function actionOne()
+
+    protected function actionOne($st)
     {
-        if(isset($_GET['id']))
-        {
-            $id = $_GET['id'];
-            $one_view = new View('localhost', 'root', '', 'test');
-            $one_view -> table = "SELECT * FROM news WHERE id = $id";
-            $article = $one_view -> News_getOne();
+        $oneart = new View('view/article.php');
+        if(isset($_GET['id'])) {
+
+            $oneart->article = $st/*$onearticle->One_news()*/;
         }
-        include 'view/article.php';
+        $oneart -> display();
     }
-    protected function actionAdd()
+
+    protected function actionAdd($st)
     {
-        include 'view/forms.php';
-        if (isset($_POST['text']) && isset($_POST['title']))
-        {
-            $tit = $_POST['title'];
-            $txt = $_POST['text'];
-            $add_view = new View('localhost', 'root', '', 'test');
-            $add_view -> table = "INSERT INTO news(title, text) VALUES ('$tit', '$txt')";
-            $add_view->Add_news();
+        $addart = new View('view/forms.php');
+        $addart->display();
+
+        if (isset($_POST['text']) && isset($_POST['title'])) {
+
+            $st/*$addarticle -> Add_news()*/;
         }
     }
 }

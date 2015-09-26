@@ -6,24 +6,24 @@ class DBConnection
         return include __DIR__ . '/../config.php';
     }
 
-    static function getConnection()
+    public function __construct($sql)
     {
-        $config = static::config();
+        $config = self::config();
         $dsn = 'mysql:dbname' . '=' . $config['db']['dbname'] . ';' . 'host' . '=' . $config['db']['host'];
-        return new PDO($dsn, $config['db']['user'], $config['db']['password']);
+        $dbh = new PDO($dsn, $config['db']['user'], $config['db']['password']);
+        $sth = $dbh->prepare($sql);
+        /*$sth->setFetchMode(PDO::FETCH_CLASS, get_called_class());*/
+        $sth->execute();
+        $sth->fetchAll();
+        /*var_dump($data);*/
     }
-    static function query($sql)
+}
+    /*public function queryone($sql, $id)
     {
-        $dbh = static::getConnection();
-        $sth = $dbh -> prepare($sql);
-        $sth -> execute();
-        return $sth -> fetchAll();
-    }
-    static function queryone($sql, $id)
-    {
-        $dbh = static::getConnection();
+        $dbh = getConnection();
         $sth = $dbh -> prepare($sql);
         $sth -> execute(['id'=>$id]);
         return $sth -> fetchAll();
-    }
-}
+    }*/
+    /*$model = new DBConnection('SELECT * FROM news');*/
+    /*var_dump($model);*/

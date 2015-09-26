@@ -6,8 +6,8 @@ class DB
     public $password;
     public $dbname;
     public $table;
-    public $tit;
-    public $txt;
+    /*public $tit;
+    public $txt;*/
 
     public function __construct($host, $user, $password, $dbname)
     {
@@ -15,8 +15,11 @@ class DB
         $this->user = $user;
         $this->password = $password;
         $this->dbname = $dbname;
-        mysql_connect($host, $user, $password);
-        mysql_select_db($dbname);
+        /*mysql_connect($host, $user, $password);
+        mysql_select_db($dbname);*/
+
+        mysql_connect($this->host, $this->user, $this->password);
+        mysql_select_db($this->dbname);
     }
     public function Add_news()
     {
@@ -40,11 +43,12 @@ class DB
         }
         return $ret;
     }
-        public function News_getOne()
-        {
-            $resul = mysql_query($this -> table);
-            $rowl = mysql_fetch_assoc($resul);
-            return $rowl;
-        }
+
+    public function One_news()
+    {
+        $res = mysql_query($this -> table);
+        $row = mysql_fetch_assoc($res);
+        return $row;
+    }
 
 }

@@ -9,14 +9,15 @@ abstract class AbstractModel
     }*/
     static function findAll()
     {
-        $sql = 'SELECT*FROM' . static::$table;
-        return DBConnection::query($sql);
+        $sql = 'SELECT * FROM' . static::$table;
+        return new DBConnection($sql);
+        /*var_dump($data);*/
     }
-    static function findBByPk($id)
+    /*static function findByPk($id)
     {
-        $sql = 'SELECT*FROM' . static::$table . 'WHERE id = :id';
+        $sql = 'SELECT * FROM' . static::$table . 'WHERE id = :id';
         return DBConnection::query($sql, $id);
-    }
+    }*/
 
 }
 
