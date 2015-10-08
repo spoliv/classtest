@@ -3,7 +3,7 @@
 require_once 'boot.php';
 
 $controller = new NewsController();
-$controller -> action('add', $addarticle -> Add_news());
+$controller->action('add'/*, $addarticle->Add_news()*/);
 
 /*$addart = new View('view/forms.php');
 $addart->display();

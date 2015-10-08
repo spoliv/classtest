@@ -1,12 +1,13 @@
 <?php
 
-abstract class AController{
+abstract class AController
+{
 
-    public function action($name, $st)
+    public function action($name/*, $st*/)
     {
         $actionName = 'action' . ucfirst($name);
         if(method_exists($this, $actionName)) {
-            $this->$actionName($st);
+            $this->$actionName(/*$st*/);//метод с именем в переменной $actionName
         }
     }
 }

@@ -13,5 +13,17 @@
     </li>
 
 <?php endforeach; ?>
+
+<br/>
+<br/>
+<h4>
+    <strong>
+        <em>
+            <a href="addarticle.php" target="_blank">
+                Добавить новую статью
+            </a>
+        </em>
+    </strong>
+</h4>
 </body>
 </html>

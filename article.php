@@ -6,7 +6,7 @@
 require_once 'boot.php';
 
 $controller = new NewsController();
-$controller -> action('one', $onearticle -> One_news());
+$controller -> action('one', $st/*Articles::findByPk()/*$onearticle -> One_news()*/);
 
 
 /*$oneart = new View('view/article.php');
